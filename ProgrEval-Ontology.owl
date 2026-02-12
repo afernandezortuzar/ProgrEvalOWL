@@ -353,6 +353,7 @@
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consigna que presentan un objetivo y una solución bien definida pero con elementos en blanco que deben ser completados.</dc:description>
+        <rdfs:label>Compleción de espacios vacíos</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -363,6 +364,7 @@
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consigna para que la hay que desarrollar una de sus posibles respuestas desde cero.</dc:description>
+        <rdfs:label>Consigna abierta</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -373,6 +375,7 @@
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consigna cuya respuesta única debe ser desarrollada desde cero.</dc:description>
+        <rdfs:label>Consigna cerrada</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -382,6 +385,7 @@
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Definicion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habilidad para determinar cómo debe estar definido un componente de un programa para que cumpla un propósto determinado, entendiendo como componente a tipos de datos compuestos, variables y funciones.</dc:description>
+        <rdfs:label>Definición</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -391,6 +395,7 @@
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Depuracion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description>Habilidad para identificar y reparar comportamientos indeseados en una pieza de código.</dc:description>
+        <rdfs:label>Depuración</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -401,6 +406,7 @@
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consigna en la que se presenta un elemento bien formulado y debe señalarse sobre él un fenómeno especificado, cuya aparición ha sido insertada deliberadamente.</dc:description>
+        <rdfs:label>Detección de Ocurrencia</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -419,6 +425,7 @@ Niveles de Complejidad:
        - Repetición simple anidada
  - Integrador
        - Repetición condicional anidada</dc:description>
+        <rdfs:label>Directiva de Repetición</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -428,6 +435,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Directiva-de-Seleccion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
         <dc:description xml:lang="es-ar">Directivas provistas por los lenguajes de programación para definir la bifurcaciones en el flujo de un programa. En la mayoría de los lenguajes imperativos podemos definirlas usando directivas como If-Then-Else y Switch-Case.</dc:description>
+        <rdfs:label>Directiva de Selección</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -437,6 +445,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Especificacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <rdfs:comment>Habildad para describir formalmente las características de una solución o sistema.</rdfs:comment>
+        <rdfs:label>Especificación</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -446,6 +455,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Esquematizacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habilidad para representar ideas mediante esquemas y diagramas.</dc:description>
+        <rdfs:label>Esquematización</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -455,6 +465,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Evaluacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <rdfs:comment xml:lang="es-ar">Habilidad para obtener el resultado de una expresión o función, dados los valores de sus variables o parámetros.</rdfs:comment>
+        <rdfs:label>Evaluación</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -464,6 +475,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Explicacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habiidad para poner ideas y razonamientos en palabras.</dc:description>
+        <rdfs:label>Explicación</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -473,6 +485,7 @@ Niveles de Complejidad:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Expresion-Logica">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
         <dc:description xml:lang="es-ar">Expresiones de la lógica proposicional y tablas de verdad.</dc:description>
+        <rdfs:label>Expresión Lógica</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -491,6 +504,7 @@ Niveles de complejidad:
       - Expresiones con una variable y llamados a funciones
  - Integrador
       - Expresiones con múltiples variables y llamados a funciones</dc:description>
+        <rdfs:label>Expresión Matemática</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -516,6 +530,7 @@ Niveles de competencias:
 - Integrador
         - Funciones recursivas
         - Funciones que llaman a otras funciones cualesquiera.</dc:description>
+        <rdfs:label>Función</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -525,6 +540,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Implementacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habilidad para diseñar y construir un programa que cumpla con un objetivo dado.</dc:description>
+        <rdfs:label>Implementación</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -548,6 +564,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Modificacion">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habilidad para tomar un programa, comprenderlo y modificar su comportamiento o expandirlo.</dc:description>
+        <rdfs:label>Modificación</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -556,6 +573,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Nivel-Inicial">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Nivel inicial</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -564,6 +582,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Nivel-Universitario">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Nivel universitario</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -574,6 +593,7 @@ Niveles de competencias:
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consignas en las que se presentan opciones como potenciales soluciones. Una es correcta y las demás son distractores diseñados para ser el resultado de errores conceptuales comunes.</dc:description>
+        <rdfs:label>Opción múltiple</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -582,6 +602,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Primer-Ciclo-Primario">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Primer ciclo del nivel primario</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -590,6 +611,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Primer-Ciclo-Secundario">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Primer ciclo del nivel secundario</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -599,6 +621,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Seguimiento">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
         <dc:description xml:lang="es-ar">Habilidad para determinar el contexto de ejecución de un programa en un punto dado.</dc:description>
+        <rdfs:label>Seguimiento</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -607,6 +630,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Segundo-Ciclo-Primario">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Segundo ciclo del nivel primario</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -615,6 +639,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Segundo-Ciclo-Secundario">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Publico-Objetivo"/>
+        <rdfs:label>Segundo ciclo del nivel secundario</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -624,6 +649,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Tipo-de-Dato-Estructurado">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
         <dc:description xml:lang="es-ar">Son los tipos de datos compuestos por composición de tipos de datos primitivos y/u otros tipos de datos estructurados. Definen cómo se interpreta el valor del dato tipado y qué operaciones se pueden aplicar sobre él.</dc:description>
+        <rdfs:label>Tipo de Dato Estructurado</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -633,6 +659,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Tipo-de-Dato-Primitivo">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
         <dc:description xml:lang="es-ar">Son los tipos de datos básicos que no se pueden descomponer en tipos más simples. Cada lenguaje de programación cuenta con un conjunto de éstos integrado. Definen cómo se interpreta el valor del dato tipado y qué operaciones se pueden aplicar sobre él.</dc:description>
+        <rdfs:label>Tipo de Dato Primitivo</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -642,6 +669,7 @@ Niveles de competencias:
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Variable">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
         <dc:description xml:lang="es-ar">Unidad de memoria volátil. Su valor depende del contexto de ejecución.</dc:description>
+        <rdfs:label>Variable</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -652,6 +680,7 @@ Niveles de competencias:
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consignas en la que se plantea una afirmación como un hecho y hay que determinar si es verdadera o falsa, justificando debidamente.</dc:description>
+        <rdfs:label>Verdadero o falso con justificación</rdfs:label>
     </owl:NamedIndividual>
     
 
