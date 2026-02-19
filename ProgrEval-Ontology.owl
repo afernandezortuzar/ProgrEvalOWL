@@ -267,6 +267,14 @@
     
 
 
+    <!-- urn:protege:ontology:progreval#orden -->
+
+    <owl:DatatypeProperty rdf:about="urn:protege:ontology:progreval#orden">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -286,22 +294,7 @@
 
     <!-- urn:protege:ontology:progreval#Competencia-por-Concepto -->
 
-    <owl:Class rdf:about="urn:protege:ontology:progreval#Competencia-por-Concepto">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="urn:protege:ontology:progreval#concepto"/>
-                        <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="urn:protege:ontology:progreval#nivel"/>
-                        <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
     
 
 
@@ -698,6 +691,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#avanzado">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</orden>
         <rdfs:label>Avanzado</rdfs:label>
     </owl:NamedIndividual>
     
@@ -707,6 +701,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#basico">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</orden>
         <rdfs:label>Básico</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1111,6 +1106,7 @@ FUNCION DibujarLíneaDeColor_DeLargo_HaciaEl_(colorLinea, largoLinea, direccion)
     <!-- urn:protege:ontology:progreval#directiva-de-repeticion-avanzado -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-avanzado">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
         <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
         <nivel rdf:resource="urn:protege:ontology:progreval#avanzado"/>
         <dc:description>Repetición condicional anidada</dc:description>
@@ -1121,6 +1117,7 @@ FUNCION DibujarLíneaDeColor_DeLargo_HaciaEl_(colorLinea, largoLinea, direccion)
     <!-- urn:protege:ontology:progreval#directiva-de-repeticion-basico -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-basico">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
         <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
         <nivel rdf:resource="urn:protege:ontology:progreval#basico"/>
         <dc:description>Repetición simple, cantidad fija de iteraciones.</dc:description>
@@ -1131,6 +1128,7 @@ FUNCION DibujarLíneaDeColor_DeLargo_HaciaEl_(colorLinea, largoLinea, direccion)
     <!-- urn:protege:ontology:progreval#directiva-de-repeticion-intermedio -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-intermedio">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
         <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
         <nivel rdf:resource="urn:protege:ontology:progreval#intermedio"/>
         <dc:description>- Repetición condicional
@@ -4378,6 +4376,7 @@ imprimirReverso(palabra){
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#intermedio">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</orden>
         <rdfs:label>Intermedio</rdfs:label>
     </owl:NamedIndividual>
     
