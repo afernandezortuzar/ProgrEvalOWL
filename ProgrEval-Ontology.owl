@@ -59,6 +59,14 @@
     
 
 
+    <!-- urn:protege:ontology:progreval#conllevaEsfuerzoDeCorreccion -->
+
+    <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#conllevaEsfuerzoDeCorreccion">
+        <rdfs:range rdf:resource="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- urn:protege:ontology:progreval#ejemplificadoPor -->
 
     <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#ejemplificadoPor">
@@ -163,52 +171,17 @@
     
 
 
-    <!-- urn:protege:ontology:progreval#Dificultad-Correccion -->
-
-    <owl:DatatypeProperty rdf:about="urn:protege:ontology:progreval#Dificultad-Correccion">
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <dc:description>Grado de dificultad que presenta la corrección de cada formato de actividad.</dc:description>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- urn:protege:ontology:progreval#Enunciado -->
 
     <owl:DatatypeProperty rdf:about="urn:protege:ontology:progreval#Enunciado"/>
+    
+
+
+    <!-- urn:protege:ontology:progreval#Esfuerzo-Correccion -->
+
+    <owl:DatatypeProperty rdf:about="urn:protege:ontology:progreval#Esfuerzo-Correccion">
+        <dc:description>Grado de dificultad que presenta la corrección de cada formato de actividad.</dc:description>
+    </owl:DatatypeProperty>
     
 
 
@@ -322,6 +295,12 @@
     
 
 
+    <!-- urn:protege:ontology:progreval#Esfuerzo-de-Correccion -->
+
+    <owl:Class rdf:about="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+    
+
+
     <!-- urn:protege:ontology:progreval#Formato-Actividad -->
 
     <owl:Class rdf:about="urn:protege:ontology:progreval#Formato-Actividad">
@@ -367,7 +346,7 @@
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Complecion-de-Espacios-Vacios">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#semi-automatico"/>
         <dc:description xml:lang="es-ar">Consigna que presentan un objetivo y una solución bien definida pero con elementos en blanco que deben ser completados.</dc:description>
         <rdfs:label>Compleción de espacios vacíos</rdfs:label>
     </owl:NamedIndividual>
@@ -378,7 +357,7 @@
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Consigna-Abierta">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#intenso"/>
         <dc:description xml:lang="es-ar">Consigna para que la hay que desarrollar una de sus posibles respuestas desde cero.</dc:description>
         <rdfs:label>Consigna abierta</rdfs:label>
     </owl:NamedIndividual>
@@ -389,7 +368,7 @@
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Consigna-Cerrada">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#moderado"/>
         <dc:description xml:lang="es-ar">Consigna cuya respuesta única debe ser desarrollada desde cero.</dc:description>
         <rdfs:label>Consigna cerrada</rdfs:label>
     </owl:NamedIndividual>
@@ -420,7 +399,7 @@
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Deteccion-de-Ocurrencia">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#semi-automatico"/>
         <dc:description xml:lang="es-ar">Consigna en la que se presenta un elemento bien formulado y debe señalarse sobre él un fenómeno especificado, cuya aparición ha sido insertada deliberadamente.</dc:description>
         <rdfs:label>Detección de Ocurrencia</rdfs:label>
     </owl:NamedIndividual>
@@ -593,7 +572,7 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Opcion-Multiple">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#automatico"/>
         <dc:description xml:lang="es-ar">Consignas en las que se presentan opciones como potenciales soluciones. Una es correcta y las demás son distractores diseñados para ser el resultado de errores conceptuales comunes.</dc:description>
         <rdfs:label>Opción múltiple</rdfs:label>
     </owl:NamedIndividual>
@@ -680,9 +659,19 @@ Niveles de competencias:
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Verdadero-o-Falso-Justificado">
         <rdf:type rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-        <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Dificultad-Correccion>
+        <conllevaEsfuerzoDeCorreccion rdf:resource="urn:protege:ontology:progreval#moderado"/>
         <dc:description xml:lang="es-ar">Consignas en la que se plantea una afirmación como un hecho y hay que determinar si es verdadera o falsa, justificando debidamente.</dc:description>
         <rdfs:label>Verdadero o falso con justificación</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#automatico -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#automatico">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</orden>
+        <rdfs:label>Automático</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4372,6 +4361,16 @@ imprimirReverso(palabra){
     
 
 
+    <!-- urn:protege:ontology:progreval#intenso -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#intenso">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</orden>
+        <rdfs:label>Intenso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- urn:protege:ontology:progreval#intermedio -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#intermedio">
@@ -4423,6 +4422,16 @@ Ejemplo: Si n=6, la secuencia es 6 -&gt; 3 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&g
     
     RETORNAR pasos
 FIN FUNCION</Respuesta-Posible>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#moderado -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#moderado">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</orden>
+        <rdfs:label>Moderado</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5026,6 +5035,16 @@ FUNCION Dibujar9ADistancia_(radio){
     Poner_DeColor_(9, Rojo)
     Mover_VecesAl_(radio, Este)
 }</Respuesta-Posible>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#semi-automatico -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#semi-automatico">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Esfuerzo-de-Correccion"/>
+        <orden rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</orden>
+        <rdfs:label>Semi-automático</rdfs:label>
     </owl:NamedIndividual>
     
 
