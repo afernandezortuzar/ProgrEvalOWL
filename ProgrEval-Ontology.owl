@@ -50,6 +50,15 @@
     
 
 
+    <!-- urn:protege:ontology:progreval#concepto -->
+
+    <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#concepto">
+        <rdfs:domain rdf:resource="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
+        <rdfs:range rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- urn:protege:ontology:progreval#ejemplificadoPor -->
 
     <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#ejemplificadoPor">
@@ -90,10 +99,28 @@
     
 
 
+    <!-- urn:protege:ontology:progreval#evaluaConceptoANivel -->
+
+    <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#evaluaConceptoANivel">
+        <rdfs:domain rdf:resource="urn:protege:ontology:progreval#Enunciado-Modelo"/>
+        <rdfs:range rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- urn:protege:ontology:progreval#evaluadoPor -->
 
     <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#evaluadoPor">
         <rdfs:label xml:lang="es-ar">evaluadoPor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:protege:ontology:progreval#nivel -->
+
+    <owl:ObjectProperty rdf:about="urn:protege:ontology:progreval#nivel">
+        <rdfs:domain rdf:resource="urn:protege:ontology:progreval#Competencia-por-Concepto"/>
+        <rdfs:range rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
     </owl:ObjectProperty>
     
 
@@ -253,24 +280,26 @@
 
     <!-- urn:protege:ontology:progreval#Actividad -->
 
-    <owl:Class rdf:about="urn:protege:ontology:progreval#Actividad">
+    <owl:Class rdf:about="urn:protege:ontology:progreval#Actividad"/>
+    
+
+
+    <!-- urn:protege:ontology:progreval#Competencia-por-Concepto -->
+
+    <owl:Class rdf:about="urn:protege:ontology:progreval#Competencia-por-Concepto">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="urn:protege:ontology:progreval#evalua"/>
-                <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="urn:protege:ontology:progreval#evalua"/>
-                <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Desempeño"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="urn:protege:ontology:progreval#usaFormato"/>
-                <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Formato-Actividad"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="urn:protege:ontology:progreval#concepto"/>
+                        <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Concepto-Fundamental"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="urn:protege:ontology:progreval#nivel"/>
+                        <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -295,12 +324,6 @@
     <!-- urn:protege:ontology:progreval#Enunciado-Modelo -->
 
     <owl:Class rdf:about="urn:protege:ontology:progreval#Enunciado-Modelo">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="urn:protege:ontology:progreval#esEjemploDe"/>
-                <owl:someValuesFrom rdf:resource="urn:protege:ontology:progreval#Actividad"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="es-ar">Enunciado</rdfs:label>
     </owl:Class>
     
@@ -545,20 +568,6 @@ Niveles de competencias:
     
 
 
-    <!-- urn:protege:ontology:progreval#Integrador -->
-
-    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Integrador">
-        <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- urn:protege:ontology:progreval#Introductorio -->
-
-    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Introductorio"/>
-    
-
-
     <!-- urn:protege:ontology:progreval#Modificacion -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#Modificacion">
@@ -681,6 +690,24 @@ Niveles de competencias:
         <Dificultad-Correccion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Dificultad-Correccion>
         <dc:description xml:lang="es-ar">Consignas en la que se plantea una afirmación como un hecho y hay que determinar si es verdadera o falsa, justificando debidamente.</dc:description>
         <rdfs:label>Verdadero o falso con justificación</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#avanzado -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#avanzado">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <rdfs:label>Avanzado</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#basico -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#basico">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <rdfs:label>Básico</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1031,11 +1058,11 @@ FUNCION DibujarLíneaDeColor_DeLargo_HaciaEl_(colorLinea, largoLinea, direccion)
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#dibujar-franja-diagonal-2">
         <apuntadoA rdf:resource="urn:protege:ontology:progreval#Nivel-Universitario"/>
         <esEjemploDe rdf:resource="urn:protege:ontology:progreval#directiva-repeticion-implementacion-consigna-abierta"/>
+        <evaluaConceptoANivel rdf:resource="urn:protege:ontology:progreval#avanzado"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#expresion-matematica-definicion"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#funcion-implementacion"/>
         <Enunciado>Implementar la función DibujarFranjaDiagonalSuroesteANoresteDeGrosor_YLargo_DeColor_(grosor, largo, color) que dibuja una franja diagonal ascendente de **grosor** celdas de grosor y **largo** celdas de largo, y de color **color**, empezando en el extremo inferior izquierdo y terminando en el extremo inferior derecho.
  Asumir que el tablero tiene al menos **largo** celdas de ancho y **grosor** + **largo** celdas de alto.</Enunciado>
-        <Nivel-de-Competencia-Evaluado>Integrador</Nivel-de-Competencia-Evaluado>
         <Respuesta-Posible>FUNCION DibujarFranjaDiagonalSuroesteANoresteDeGrosor_YLargo_DeColor_(grosor, largo, color){
     /*
     Propósito: Dibujar con bolitas de color **color** una franja diagonal ascendente de **grosor** celdas de grosor y **largo** celdas de largo, y de color **color**, empezando en el extremo inferior izquierdo y terminando en el extremo inferior derecho
@@ -1077,6 +1104,37 @@ FUNCION DibujarLíneaDeColor_DeLargo_HaciaEl_(colorLinea, largoLinea, direccion)
     }
     
 }</Respuesta-Posible>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#directiva-de-repeticion-avanzado -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-avanzado">
+        <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
+        <nivel rdf:resource="urn:protege:ontology:progreval#avanzado"/>
+        <dc:description>Repetición condicional anidada</dc:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#directiva-de-repeticion-basico -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-basico">
+        <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
+        <nivel rdf:resource="urn:protege:ontology:progreval#basico"/>
+        <dc:description>Repetición simple, cantidad fija de iteraciones.</dc:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:protege:ontology:progreval#directiva-de-repeticion-intermedio -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#directiva-de-repeticion-intermedio">
+        <concepto rdf:resource="urn:protege:ontology:progreval#Directiva-de-Repeticion"/>
+        <nivel rdf:resource="urn:protege:ontology:progreval#intermedio"/>
+        <dc:description>- Repetición condicional
+- Repetición simple anidada</dc:description>
     </owl:NamedIndividual>
     
 
@@ -4316,6 +4374,15 @@ imprimirReverso(palabra){
     
 
 
+    <!-- urn:protege:ontology:progreval#intermedio -->
+
+    <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#intermedio">
+        <rdf:type rdf:resource="urn:protege:ontology:progreval#Nivel-de-Competencia"/>
+        <rdfs:label>Intermedio</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- urn:protege:ontology:progreval#longitud-de-conjetura-de-collatz -->
 
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#longitud-de-conjetura-de-collatz">
@@ -4452,6 +4519,7 @@ FUNCION ConstruirEscalon(){
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#pasar-palabra-a-mayuscula">
         <apuntadoA rdf:resource="urn:protege:ontology:progreval#Nivel-Universitario"/>
         <esEjemploDe rdf:resource="urn:protege:ontology:progreval#directiva-repeticion-implementacion-consigna-abierta"/>
+        <evaluaConceptoANivel rdf:resource="urn:protege:ontology:progreval#avanzado"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#expresion-matematica-definicion"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#funcion-implementacion"/>
         <Enunciado>Hacer el procedimiento PasarPalabraActualAMayúsculas() que suponiendo que en la fila actual se codifica una palabra en minúsculas usando bolitas, ponga la misma palabra en mayúsculas en la fila al Norte.
@@ -4460,7 +4528,6 @@ FUNCION ConstruirEscalon(){
            - La primera letra de la palabra está en la celda lindante al Este de la que contiene la cantidad de letras.
            - En el código ASCII si las letras mayúsculas se codifican con un número N entonces la misma letra minúscula se representa con N+32 (ej. la ‘a’ minúsculas se representa con el número 97 y la ‘A’ mayúsculas, con el 65).
            - El cabezal se encuentra en la celda más al Oeste de una fila donde hay una palabra representada.</Enunciado>
-        <Nivel-de-Competencia-Evaluado>Integrador</Nivel-de-Competencia-Evaluado>
         <Respuesta-Posible>FUNCION PasarPalabraActualAMayúsculas() {
     REPETIR nroBolitas(Rojo) VECES {
         Mover(Este)
@@ -4549,11 +4616,11 @@ FUNCION PelearLaBatalla(){
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#pelear-la-batalla-2">
         <apuntadoA rdf:resource="urn:protege:ontology:progreval#Nivel-Universitario"/>
         <esEjemploDe rdf:resource="urn:protege:ontology:progreval#directiva-repeticion-implementacion-consigna-abierta"/>
+        <evaluaConceptoANivel rdf:resource="urn:protege:ontology:progreval#intermedio"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#expresion-matematica-definicion"/>
         <Enunciado>Suponiendo que se está programando un juego donde en las celdas del tablero se representan Soldados (los aliados con una bolita de color Negro y los enemigos con una bolita de color Rojo por cada soldado), implementar el procedimiento PelearLaBatalla(). Sabiendo que, cuando 2 soldados enemigos pelean contra 3 aliados, todos mueren, y suponiendo que siempre hay suficientes soldados aliados como para ganar la batalla, PelearLaBatalla() debe simularla sobre la celda a la que apunta el cabezal.
  Por ejemplo, si hay 6 enemigos y 10 aliados, tras llamar a PelearLaBatalla() mueren los 6 enemigos y 9 de los aliados; si hay 10 enemigos y 21 aliados, tras llamar a PelearLaBatalla() mueren los 10 enemigos y 15 soldados aliados.
  Se puede asumir que la cantidad de soldados enemigos es par.</Enunciado>
-        <Nivel-de-Competencia-Evaluado>Exploratorio</Nivel-de-Competencia-Evaluado>
         <Respuesta-Posible>FUNCION PelearLaBatalla(){
 	REPETIR cantidadBolitas(Rojo) + cantidadBolitas(Rojo)/2 VECES {
     	Sacar(Negro)
@@ -4611,11 +4678,11 @@ FUNCION Mover3VecesAl_(direcciónAMover) {
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#pintar-tablero-dimensiones-conocidas">
         <apuntadoA rdf:resource="urn:protege:ontology:progreval#Nivel-Universitario"/>
         <esEjemploDe rdf:resource="urn:protege:ontology:progreval#directiva-repeticion-implementacion-consigna-abierta"/>
+        <evaluaConceptoANivel rdf:resource="urn:protege:ontology:progreval#intermedio"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#funcion-implementacion"/>
         <Enunciado>Escribir un procedimiento PintarElTableroDeAzul() que, asumiendo que el tablero tiene 10 celdas de largo y 7 celdas de alto, pinte absolutamente todo el tablero con bolitas azules, dejando exactamente una bolita azul en cada celda.
 La estrategia de solución debe quedar clara a partir de la lectura del código. Use subtareas con nombres apropiados para dicho objetivo.
 El cabezal comienza y termina en la esquina inferior izquierda del tablero.</Enunciado>
-        <Nivel-de-Competencia-Evaluado>Exploratorio</Nivel-de-Competencia-Evaluado>
         <Respuesta-Posible>FUNCION PintarElTableroDeAzul(){
 	REPETIR 6 VECES {
     	PintarFilaDeAzul()
@@ -4751,10 +4818,10 @@ FIN FUNCION</Respuesta-Posible>
     <owl:NamedIndividual rdf:about="urn:protege:ontology:progreval#rectangulo-rojo-negro-5x3">
         <apuntadoA rdf:resource="urn:protege:ontology:progreval#Nivel-Universitario"/>
         <esEjemploDe rdf:resource="urn:protege:ontology:progreval#directiva-repeticion-implementacion-consigna-abierta"/>
+        <evaluaConceptoANivel rdf:resource="urn:protege:ontology:progreval#intermedio"/>
         <requiereManejoDe rdf:resource="urn:protege:ontology:progreval#funcion-implementacion"/>
         <Enunciado>Escribir un procedimiento DibujarRectánguloRojoYNegroDe5x3() que dibuje un rectángulo sólido de 5 celdas de largo por 3 de alto utilizando directivas de repetición.
 El cabezal comienza y termina en la esquina inferior izquierda del rectángulo.</Enunciado>
-        <Nivel-de-Competencia-Evaluado>Exploratorio</Nivel-de-Competencia-Evaluado>
         <Respuesta-Posible>FUNCION DibujarRectánguloRojoYNegroDe5x3(){
 	REPETIR 2 VECES{
     
